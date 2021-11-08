@@ -1,12 +1,9 @@
 version: '3'
 services:
   app:
-    build: .
-    image: ${DOCKER_USER_ID}/ubuntu_flask
-  production:
-    image: ${DOCKER_USER_ID}/ubuntu_flask:${BUILD_NUMBER}
+    image: kangbokim/ubuntu_flask:latest
+    command: python3 app.py
     volumes:
       - .:/code
-    command: python3 app.py
     ports:
       - "5000:5000"
