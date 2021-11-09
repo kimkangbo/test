@@ -7,7 +7,7 @@ node('build') {
         stage('Pull') {
             git 'https://github.com/kimkangbo/test.git'
         }
-        stage('Static Analysis')
+        stage('Static Analysis') {
             try {
                sh(script: 'pylint app.py')
             } catch (e) {
