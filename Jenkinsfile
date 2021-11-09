@@ -1,3 +1,4 @@
+/*
 node('build') {    
     git poll: true, url:'https://github.com/kimkangbo/test.git'
     withCredentials([[$class: 'UsernamePasswordMultiBinding',
@@ -27,7 +28,7 @@ node('build') {
         }
     }
 }
-
+*/
 node('deploy') {    
     git poll: true, url:'https://github.com/kimkangbo/test.git'
     withCredentials([[$class: 'UsernamePasswordMultiBinding',
