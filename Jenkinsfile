@@ -8,7 +8,11 @@ node('build') {
             git 'https://github.com/kimkangbo/test.git'
         }
         stage('Unit Test') {
-            sh(script: 'pylint app.py')
+            try {
+               sh(script: 'pylint app.py')
+            } catch (e) {
+               sh(script: 'echo Unit Test Failed. Check codes')
+            }   
         }
         stage('Build') {
             sh(script: 'docker-compose build app')
