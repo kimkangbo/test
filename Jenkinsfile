@@ -7,11 +7,11 @@ node('build') {
         stage('Pull') {
             git 'https://github.com/kimkangbo/test.git'
         }
-        stage('Unit Test') {
+        stage('Static Analysis')
             try {
                sh(script: 'pylint app.py')
             } catch (e) {
-               sh(script: 'echo Unit Test Failed. Check codes')
+               sh(script: 'echo Static Analysis failed. Check codes')
             }   
         }
         stage('Build') {
